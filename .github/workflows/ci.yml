@@ -1,0 +1,59 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+      - name: Unit tests
+        run: make test
+      - name: Detect attacks in a 15-minute stream (must catch at least 90%)
+        run: |
+          PYTHONPATH=src python -m fraudstream.simulator --minutes 15 --attacks-per-min 3
+          PYTHONPATH=src timeout 900 python -m fraudstream.job --available-now --max-files-per-trigger 4
+          PYTHONPATH=src python -m fraudstream.evaluate --min-recall 0.9 --min-precision 0.85
+
+  kafka:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      kafka:
+        image: apache/kafka:3.9.1
+        ports:
+          - 9092:9092
+        options: >-
+          --health-cmd "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"
+          --health-interval 5s --health-timeout 10s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+      - name: End to end on a real Kafka broker
+        run: PYTHONPATH=src python scripts/kafka_e2e.py --bootstrap localhost:9092 --minutes 10

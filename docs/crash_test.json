@@ -1,0 +1,16 @@
+{
+  "files": 25,
+  "hard_kills": 2,
+  "uninterrupted": {
+    "bronze_rows": 36056,
+    "alerts": 13
+  },
+  "after_crashes": {
+    "bronze_rows": 36056,
+    "alerts": 13
+  },
+  "identical_bronze": true,
+  "identical_alerts": true,
+  "duplicates_after_crashes": 0,
+  "missing_after_crashes": 0
+}

@@ -1,0 +1,8 @@
+pyspark==4.0.1
+pandas>=2.2,<3        # PySpark 4.0 does not yet support pandas 3
+pyarrow>=17
+numpy>=2.0
+deltalake>=1.0
+kafka-python>=2.0.2
+matplotlib>=3.9
+pytest>=8

@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "attacks": 43,
+    "caught": 43,
+    "recall": 1.0,
+    "alerts": 44,
+    "precision": 0.977,
+    "benign_sprees": 12,
+    "benign_sprees_flagged": 1,
+    "latency_p50_s": 4.55,
+    "latency_p95_s": 6.61
+  },
+  "recall_by_attack": {
+    "card_testing": {
+      "attacks": 21,
+      "caught": 21
+    },
+    "impossible_travel": {
+      "attacks": 4,
+      "caught": 4
+    },
+    "account_takeover": {
+      "attacks": 18,
+      "caught": 18
+    }
+  },
+  "precision_by_rule": {
+    "card_testing": {
+      "alerts": 21,
+      "true": 21,
+      "benign_spree": 0,
+      "ordinary_traffic": 0
+    },
+    "impossible_travel": {
+      "alerts": 4,
+      "true": 4,
+      "benign_spree": 0,
+      "ordinary_traffic": 0
+    },
+    "account_takeover": {
+      "alerts": 19,
+      "true": 18,
+      "benign_spree": 1,
+      "ordinary_traffic": 0
+    }
+  },
+  "integrity": {
+    "duplicate_alert_ids": 0,
+    "bronze_rows": 72289,
+    "bronze_duplicate_txn_ids": 0,
+    "events_delivered": 72991,
+    "unique_transactions_sent": 72289,
+    "missing_from_bronze": 0
+  },
+  "run": {
+    "seed": 404,
+    "event_minutes": 30,
+    "wall_seconds_streaming": 368.6,
+    "speedup_vs_real_time": 4.9,
+    "files": 183,
+    "trigger": "1 second"
+  }
+}

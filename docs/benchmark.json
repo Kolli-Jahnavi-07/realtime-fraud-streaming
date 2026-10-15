@@ -1,0 +1,209 @@
+{
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "minutes_per_seed": 30,
+  "overall": {
+    "attacks": 147,
+    "caught": 147,
+    "alerts": 153,
+    "true_alerts": 147,
+    "benign_sprees": 42,
+    "benign_sprees_flagged": 6,
+    "recall": 1.0,
+    "precision": 0.961
+  },
+  "by_rule": {
+    "card_testing": {
+      "attacks": 69,
+      "caught": 69,
+      "alerts": 69,
+      "true": 69
+    },
+    "impossible_travel": {
+      "attacks": 20,
+      "caught": 20,
+      "alerts": 20,
+      "true": 20
+    },
+    "account_takeover": {
+      "attacks": 58,
+      "caught": 58,
+      "alerts": 64,
+      "true": 58
+    }
+  },
+  "integrity_ok": true,
+  "runs": [
+    {
+      "summary": {
+        "attacks": 43,
+        "caught": 43,
+        "recall": 1.0,
+        "alerts": 46,
+        "precision": 0.935,
+        "benign_sprees": 17,
+        "benign_sprees_flagged": 3,
+        "latency_p50_s": 154.97,
+        "latency_p95_s": 205.03
+      },
+      "recall_by_attack": {
+        "card_testing": {
+          "attacks": 22,
+          "caught": 22
+        },
+        "impossible_travel": {
+          "attacks": 7,
+          "caught": 7
+        },
+        "account_takeover": {
+          "attacks": 14,
+          "caught": 14
+        }
+      },
+      "precision_by_rule": {
+        "card_testing": {
+          "alerts": 22,
+          "true": 22,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "impossible_travel": {
+          "alerts": 7,
+          "true": 7,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "account_takeover": {
+          "alerts": 17,
+          "true": 14,
+          "benign_spree": 3,
+          "ordinary_traffic": 0
+        }
+      },
+      "integrity": {
+        "duplicate_alert_ids": 0,
+        "bronze_rows": 72447,
+        "bronze_duplicate_txn_ids": 0,
+        "events_delivered": 73117,
+        "unique_transactions_sent": 72447,
+        "missing_from_bronze": 0
+      },
+      "seed": 101
+    },
+    {
+      "summary": {
+        "attacks": 57,
+        "caught": 57,
+        "recall": 1.0,
+        "alerts": 59,
+        "precision": 0.966,
+        "benign_sprees": 12,
+        "benign_sprees_flagged": 2,
+        "latency_p50_s": 95.48,
+        "latency_p95_s": 146.93
+      },
+      "recall_by_attack": {
+        "card_testing": {
+          "attacks": 27,
+          "caught": 27
+        },
+        "impossible_travel": {
+          "attacks": 5,
+          "caught": 5
+        },
+        "account_takeover": {
+          "attacks": 25,
+          "caught": 25
+        }
+      },
+      "precision_by_rule": {
+        "card_testing": {
+          "alerts": 27,
+          "true": 27,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "impossible_travel": {
+          "alerts": 5,
+          "true": 5,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "account_takeover": {
+          "alerts": 27,
+          "true": 25,
+          "benign_spree": 2,
+          "ordinary_traffic": 0
+        }
+      },
+      "integrity": {
+        "duplicate_alert_ids": 0,
+        "bronze_rows": 72131,
+        "bronze_duplicate_txn_ids": 0,
+        "events_delivered": 72803,
+        "unique_transactions_sent": 72131,
+        "missing_from_bronze": 0
+      },
+      "seed": 202
+    },
+    {
+      "summary": {
+        "attacks": 47,
+        "caught": 47,
+        "recall": 1.0,
+        "alerts": 48,
+        "precision": 0.979,
+        "benign_sprees": 13,
+        "benign_sprees_flagged": 1,
+        "latency_p50_s": 135.41,
+        "latency_p95_s": 156.4
+      },
+      "recall_by_attack": {
+        "card_testing": {
+          "attacks": 20,
+          "caught": 20
+        },
+        "impossible_travel": {
+          "attacks": 8,
+          "caught": 8
+        },
+        "account_takeover": {
+          "attacks": 19,
+          "caught": 19
+        }
+      },
+      "precision_by_rule": {
+        "card_testing": {
+          "alerts": 20,
+          "true": 20,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "impossible_travel": {
+          "alerts": 8,
+          "true": 8,
+          "benign_spree": 0,
+          "ordinary_traffic": 0
+        },
+        "account_takeover": {
+          "alerts": 20,
+          "true": 19,
+          "benign_spree": 1,
+          "ordinary_traffic": 0
+        }
+      },
+      "integrity": {
+        "duplicate_alert_ids": 0,
+        "bronze_rows": 72198,
+        "bronze_duplicate_txn_ids": 0,
+        "events_delivered": 72901,
+        "unique_transactions_sent": 72198,
+        "missing_from_bronze": 0
+      },
+      "seed": 303
+    }
+  ]
+}
